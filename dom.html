@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>DOM Explore With JavaScript</title>
+    <style>
+        #book-list ul li {
+            list-style: none;
+            padding: 20px 0px;
+            border-left: 4px solid salmon;
+            margin: 10px 0px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 1px 0.5px 2px #444;
+        }
+        .wrapper{
+            box-shadow: 1px 0.5px 2px #444;
+        }
+        .jumbotron{
+            box-shadow: 1px 0.5px 2px #444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper container my-3">
+        <header class="jumbotron w-75 mx-auto py-3">
+            <div class="mb-5">
+                <h2>Book Lists</h2>
+                <p>Books For Sujon Hera</p>
+            </div>
+            <input class="form-control mx-3" type="text" name="" id="" placeholder="Search Book . . .">
+        </header>
+        <div id="book-list">
+            <h3>Books to Read</h3>
+            <ul>
+                <li>
+                    <h5>Book List 1</h5><button class="btn btn-danger">Delete</button>
+                </li>
+                <li>
+                    <h5>Book List 2</h5><button class="btn btn-danger">Delete</button>
+                </li>
+                <li>
+                    <h5>Book List 3</h5><button class="btn btn-danger">Delete</button>
+                </li>
+                <li>
+                    <h5>Book List 4</h5><button class="btn btn-danger">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const bookList = document.getElementById("book-list");
+        const ul =   bookList.lastElementChild;
+        const list = ul.querySelectorAll("li");
+        Array.from(list).map((item, index)  => {
+            const btn  = item.querySelector("button");
+            btn.addEventListener('click', function(e) {
+                ul.removeChild(item)
+            })
+            item.setAttribute('title', 'This is a title');
+            item.querySelector("h5").innerHTML = " This a new book added by JavaScript " + (index + 1);
+            item.querySelector("h5").innerHTML += ' <span style="color:red"> (list of book) <span>'
+        })
+
+       
+    </script>
+
+</body>
+
+</html>
