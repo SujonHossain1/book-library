@@ -1,77 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Explore JavaScript</title>
-    <style>
-        article.article {
-            border: 2px solid black;
-            border-radius: 20px;
-            margin: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Book Library</title>
 </head>
-
 <body>
-    <main>
-        <section>
-            <article class="article">
-                <h1>Article-1</h1>
-                <p class="author"></p>
-                <p class="documentation">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, asperiores!
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, assumenda!</p>
-                </p>
-            </article>
-            <article class="article">
-                <h1>Article-2</h1>
-                <p class="author"></p>
-                <p class="documentation">
-                    Ducimus libero odio, consectetur earum provident nisi odit rerum quo?
-                    <p>Dignissimos nostrum maxime quidem est minus. Fuga vero nesciunt nisi!</p>
-                </p>
-            </article>
-            <article class="article">
-                <h1>Article-3</h1>
-                <p class="author"></p>
-                <p class="documentation">
-                    Quam eligendi vitae iste est tempora ad ducimus fugit dolorum!
-                    <p>Blanditiis voluptas impedit atque aliquid dolor eaque suscipit sunt numquam.</p>
-                </p>
-            </article>
-        </section>
-    </main>
+    <header>
 
-    <script>
-        // let authors = document.getElementsByClassName('author');
-
-        // for (const i in authors) {
-        //     if (authors.hasOwnProperty(i)) {
-        //         const element = authors[i];
-        //         // console.log(element)
-        //     }
-        // }
-
-        // let articles = document.querySelectorAll(".article h1");
-
-        // for (let i = 0; i < articles.length; i++) {
-        //     const element = articles[i];
-        //     element.setAttribute('class', 'article');
-        //     element.style.color = 'red';
-        // }
-
-        const article = document.querySelectorAll(".article");
-
-        Array.from(article).map(item => {
-            const h3 = document.createElement('h3');
-            h3.innerHTML = " This is a Add By JavaScript";
-
-            item.appendChild(h3)
-
-        })
-    </script>
+    </header>
+    <div id="book-list">
+        <h2>Books for Read</h2>
+        <ul>
+            <li class="list-item"><span class="name">Book Name 1</span><span class="delete">delete</span></li>
+            <li class="list-item"><span class="name">Book Name 2</span><span class="delete">delete</span></li>
+            <li class="list-item"><span class="name">Book Name 3</span><span class="delete">delete</span></li>
+            <li class="list-item"><span class="name">Book Name 4</span><span class="delete">delete</span></li>
+        </ul>
+        <form action="" id="add-new-book">
+            <input id="book" type="text" name="" id="" placeholder="Add New Book...">
+            <button class="btn" type="submit">Add New</button>
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+   
 </body>
-
 </html>
